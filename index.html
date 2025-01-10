@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Philipp Flotho</title>
+
+  <!-- Minimal Dark Theme Reset / Basic CSS -->
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background-color: #1a1a1a;
+      color: #ddd;
+      line-height: 1.5;
+    }
+    a {
+      color: #4fa2e7;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Header / Navigation */
+    header {
+      background: #2a2a2a;
+      padding: 1rem 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header .logo {
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+    nav li a {
+      color: #ddd;
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+    }
+    nav li a:hover,
+    nav li a.active {
+      background: #4fa2e7;
+      color: #fff;
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 900px;
+      margin: 1rem auto;
+      padding: 0 1rem;
+    }
+
+    /* Profile / Bio */
+    .profile-section {
+      text-align: center;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+    .profile-img {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #555;
+      margin-bottom: 1rem;
+    }
+    .name-title {
+      font-size: 2rem;
+      margin-bottom: 0.2rem;
+    }
+    .position-title {
+      font-size: 1.1rem;
+      color: #ccc;
+      margin-bottom: 1rem;
+    }
+    .bio-text {
+      max-width: 700px;
+      margin: 0 auto;
+      color: #ddd;
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    /* Section Headings */
+    .section-title {
+      font-size: 1.5rem;
+      margin: 2rem 0 1rem 0;
+      border-bottom: 1px solid #555;
+      padding-bottom: 0.3rem;
+    }
+
+    /* List for "Previously at VC-lab" */
+    .vc-list {
+      list-style-type: disc;
+      list-style-position: inside;
+      margin-top: 0.5rem;
+      margin-bottom: 2rem;
+      padding-left: 1.5rem;
+    }
+    .vc-list li {
+      margin-bottom: 0.3rem;
+    }
+
+    /* Publications from BibTeX */
+    #pub-list .bibtex_display {
+      margin-top: 1rem;
+    }
+    /* Additional styling for BibTeX items if needed */
+    #pub-list .bibtex_entry {
+      background: #2a2a2a;
+      border: 1px solid #444;
+      border-radius: 4px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+    }
+    #pub-list h3 { /* Possibly used for year headings if library supports grouping */
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1rem;
+      color: #888;
+      font-size: 0.9rem;
+      margin-top: 2rem;
+      border-top: 1px solid #444;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Header / Navigation -->
+<header>
+  <div class="logo">Philipp Flotho</div>
+  <nav>
+    <ul>
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#abstract">Research</a></li>
+      <li><a href="#links">Links</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Main Container -->
+<div class="container" id="home">
+
+  <!-- Profile / Bio Section -->
+  <section class="profile-section">
+    <!-- Replace with your actual photo -->
+    <img src="img.jpg" alt="Profile Photo" class="profile-img">
+    <div class="name-title">Philipp Flotho</div>
+    <div class="position-title">Research Scientist / PhD Candidate</div>
+    <p class="bio-text">
+      I am a researcher working at the intersection of <strong>computer vision</strong>,
+      <strong>systems neuroscience</strong>, and <strong>bioinformatics</strong>,
+      focusing on cross-domain challenges of advanced visual computing methods
+      to specialized biomedical imaging and computational biology workflows.
+      My interests include large-scale multimodal data, 2-photon microscopy,
+      thermal imaging, face analysis,
+      and bridging methods from <strong>computer vision</strong> and <strong>deep learning</strong> into modern bioinformatics pipelines.
+    </p>
+  </section>
+
+  <!-- Previously at VC-lab (immediately below Bio) -->
+  <section>
+    <h2 class="section-title">Previously @ VC-Lab</h2>
+    <p>
+      The <em>Visual Computing for Neuroscience Lab</em> was part of the <a href="https://www.snnu.uni-saarland.de/">Systems Neuroscience and Neurotechnology Unit (SNNU)</a> from
+      2018 to 2024. During that time, I have served as <strong>lab head</strong> and <strong>lead computer vision researcher</strong> closely collaborating with chairs and researchers at Saarland University, Saarland University Hospital, TU-Berlin,
+      the Okinawa Institute of Science and Technology, the University of Chicago and others.
+      The lab provided frameworks and solutions for cross-domain imaging, motion correction,
+      and multi-camera setups. Check out my <a href="https://github.com/phflot" target="_blank">GitHub</a> for implementations of some of the projects,
+      in particular related to <strong>motion magnification</strong> and <strong>2P motion correction</strong>. And a 2020
+      <a href="https://www.snnu.uni-saarland.de/tag_der_offenen_tuer/" target="_blank">Saarland University talk</a> on the scope of the research (only in German). Some resources:
+    </p>
+    <ul class="vc-list">
+      <li><a href="https://www.snnu.uni-saarland.de/flow-registration/">ImageJ/FIJI Plugin and MATLAB Toolbox for 2-Photon Image Registration</a></li>
+      <li><a href="https://www.snnu.uni-saarland.de/variational_alignment/">Variational 1D Alignment</a></li>
+      <li><a href="https://www.snnu.uni-saarland.de/covid19/">Multimodal Data Acquisition at SARS-CoV-2 Testing Centers</a></li>
+      <li><a href="https://www.snnu.uni-saarland.de/auriculomotor/">Motion Analysis in a Study for Auditory Attention</a></li>
+    </ul>
+  </section>
+
+</div>
+
+<!-- Abstract / Original Contributions -->
+<div class="container" id="abstract">
+  <h2 class="section-title">Research</h2>
+  <p style="text-align: justify;">
+    Applying computer vision methods developed for natural RGB images to biomedical
+    imaging, particularly in neuroscience, presents unique challenges due to data
+    characteristics and domain-specific requirements...
+    <br/><br/>
+    ...
+  </p>
+  <p style="text-align: justify;">
+    1) Flow-Registration framework for dense OF-based motion compensation... <br/>
+    2) A new & fast method for alignment of 1D signals... <br/>
+    3) Fully calibrated multi-camera setups for multimodal imaging... <br/>
+    4) Lagrangian motion magnification methods... <br/>
+    5) DLC-based tracking approach for x-ray... <br/>
+    6) Deep learning-based approach for dense facial landmarks in thermal images... <br/>
+    ...
+  </p>
+</div>
+
+<!-- Publications from a BibTeX File -->
+<div class="container" id="publications">
+  <h2 class="section-title">Publications</h2>
+  <!-- The bibtex_js library will parse your .bib references and inject them here -->
+  <em>Will be added soon...</em>
+  <div id="pub-list" class="bibtex_display"></div>
+</div>
+
+<!-- Additional Links or info -->
+<div class="container" id="links">
+  <h2 class="section-title">Links & Contact</h2>
+  <p>
+    Check out my <a href="https://github.com/phflot" target="_blank">GitHub</a>,
+    <a href="https://pypi.org/user/phflot/" target="_black">PyPI</a>
+    or <a href="mailto:Philipp.Flotho@uni-saarland.de">email me</a> for questions or collaborations.
+  </p>
+</div>
+
+<!-- Footer -->
+<footer>
+  <p>
+    &copy; 2025 Philipp Flotho.
+  </p>
+</footer>
+
+<!-- BibTeX Parsing with bibtex_js -->
+<script src="bibtex_js.js"></script>
+<script>
+  /*
+     Make sure you have your 'pubs.bib' file in the same folder
+     and the 'bibtex_js.js' library properly referenced.
+  */
+  bibtex_js_draw('pubs.bib', 'pub-list', {
+    sort: ['year','descending'],
+    // Some variants of bibtex_js might allow grouping by year:
+    // group_by: 'year'
+  });
+</script>
+
+</body>
+</html>
