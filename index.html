@@ -31,6 +31,11 @@
   }
   </script>
 
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="bibtex_js.js"></script>
+  <bibtex src="publications.bib"></bibtex>
+
+
   <meta name="robots" content="index, follow">
 
 
@@ -163,6 +168,111 @@
       color: #fff;
     }
 
+    /* Publications Styling */
+  .bibtex_display {
+    margin-top: 1rem;
+    padding: 0;
+  }
+  .bibtex_template ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .bibtex_template li {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #444;
+  }
+  .bibtex_template .title {
+    font-weight: bold;
+    color: #ddd;
+  }
+  .bibtex_template .author {
+    font-style: italic;
+    color: #aaa;
+  }
+  .bibtex_template .journal {
+    font-style: normal;
+    color: #ccc;
+  }
+  .bibtex_display .group.year h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #555;
+    padding-bottom: 5px;
+  }
+
+  /* Publications Section Styling */
+  #publications {
+    padding: 1rem;
+  }
+
+  .bibtex_display {
+    margin-top: 1rem;
+  }
+
+  .bibtex_template ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .bibtex_template .group.year {
+    margin-bottom: 2rem;
+  }
+
+  .bibtex_template .group.year h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+    border-bottom: 2px solid #4fa2e7;
+    padding-bottom: 0.3rem;
+  }
+
+  .bibtex_template .bibtex_entry {
+    background: #2a2a2a;
+    border: 1px solid #444;
+    border-radius: 4px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .bibtex_template .title {
+    font-weight: bold;
+    color: #4fa2e7;
+    font-size: 1.1rem;
+  }
+
+  .bibtex_template .author {
+    font-style: italic;
+    color: #aaa;
+    margin-top: 0.3rem;
+    display: block;
+  }
+
+  .bibtex_template .journal,
+  .bibtex_template .booktitle {
+    color: #ccc;
+    margin-top: 0.3rem;
+    display: block;
+  }
+
+  .bibtex_template .year {
+    color: #fff;
+    margin-top: 0.3rem;
+    display: block;
+  }
+
+  .bibtex_entry span,
+  .bibtex_entry div.if,
+  .bibtex_entry a {
+    display: inline;
+    white-space: normal;
+  }
+
     /* Footer */
     footer {
       text-align: center;
@@ -177,7 +287,6 @@
 
 <body>
 
-<!-- Header / Navigation -->
 <header>
   <div class="logo">Philipp Flotho</div>
   <nav>
@@ -190,12 +299,9 @@
   </nav>
 </header>
 
-<!-- Main Container -->
 <div class="container" id="home">
 
-  <!-- Profile / Bio Section -->
   <section class="profile-section">
-    <!-- Replace with your actual photo -->
     <img src="img.jpg" alt="Profile photo of Philipp Flotho" class="profile-img">
     <div class="name-title">Philipp Flotho</div>
     <div class="position-title">Research Scientist / PhD Candidate</div>
@@ -210,7 +316,6 @@
     </p>
   </section>
 
-  <!-- Previously at VC-lab (immediately below Bio) -->
   <section>
     <h2 class="section-title">Previously @ VC-Lab</h2>
     <p>
@@ -255,15 +360,61 @@
     <em>Will be added soon...</em>
 </div>
 
-<!-- Publications from a BibTeX File -->
-<div class="container" id="publications">
-  <h2 class="section-title">Publications</h2>
-  <!-- The bibtex_js library will parse your .bib references and inject them here -->
-  <em>Will be added soon...</em>
-  <div id="pub-list" class="bibtex_display"></div>
-</div>
 
-<!-- Additional Links or info -->
+<section id="publications" class="container">
+  <h2 class="section-title">Publications</h2>
+  <div id="bibtex_errors"></div>
+
+  <div class="bibtex_structure">
+    <div class="group year" extra="DESC number">
+      <div class="templates"></div>
+    </div>
+  </div>
+
+  <div id="bibtex_display">
+    <div class="bibtex_template">
+      <ul>
+        <li class="bibtex_entry">
+
+          <div class="if author">
+            <span class="author"></span>
+          </div>
+
+          <span class="if title">
+            <a class="url"><span class="title"></span></a>
+          </span>
+
+          <span class="if journal">
+            <em><span class="journal"></span></em>
+          </span>
+
+          <span class="if booktitle">
+            <em><span class="booktitle"></span></em>
+          </span>
+
+          <span class="if volume">
+            <span class="volume"></span>
+          </span>
+
+          <span class="if pages">
+            <span class="pages"></span>
+          </span>
+
+          <span class="if year">
+            <span class="year"></span>
+          </span>
+
+          <span class="if doi">
+            <span class="doi"></span>
+          </span>
+
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
 <div class="container" id="links">
   <h2 class="section-title">Links & Contact</h2>
   <p>
@@ -273,26 +424,11 @@
   </p>
 </div>
 
-<!-- Footer -->
 <footer>
   <p>
     &copy; 2025 Philipp Flotho.
   </p>
 </footer>
-
-<!-- BibTeX Parsing with bibtex_js -->
-<script src="bibtex_js.js"></script>
-<script>
-  /*
-     Make sure you have your 'pubs.bib' file in the same folder
-     and the 'bibtex_js.js' library properly referenced.
-  */
-  bibtex_js_draw('pubs.bib', 'pub-list', {
-    sort: ['year','descending'],
-    // Some variants of bibtex_js might allow grouping by year:
-    // group_by: 'year'
-  });
-</script>
 
 </body>
 </html>
